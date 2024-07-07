@@ -1,0 +1,29 @@
+#include <iostream>
+#include <cstring>
+#include <algorithm>
+#include <vector> 
+char litera;
+int f[26];
+int maxi=0;
+std::string c;
+int main()
+{
+    
+    getline(std::cin,c);
+    for(int i=0;i<c.length();i++)
+    {
+        if(int(c[i])-97>=0&&int(c[i])-97<=25)
+        {
+            f[int(c[i])-97]++;
+        }
+    }
+    for(int i=0;i<26;i++)
+    {
+        if(maxi<f[i])
+        {
+            maxi=f[i];
+            litera=(char)int(i+97);
+        }
+    }
+    std::cout<<litera;
+}
